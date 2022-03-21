@@ -1,0 +1,116 @@
+.cdx-partner-image {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    [data-placeholder]:empty::before{
+        content: attr(data-placeholder);
+        color: #707684;
+        font-weight: normal;
+        opacity: 1;
+    }
+
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__card {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        line-height: 1.6em;
+        outline: none;
+        margin-bottom: 10px;
+    }
+
+    &__fields {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__title {
+        font-weight: 600;
+    }
+
+    &__description {
+        font-size: 0.86em;
+        margin: 10px 0;
+    }
+
+    &__title,
+    &__description {
+        outline: none;
+        border-left: 1px solid rgba(201, 201, 204, 0.48);
+        padding: 5px 0 5px 10px;
+    }
+
+    &__image {
+        position: relative;
+        width: 140px;
+        height: auto;
+        min-width: 70px;
+        min-height: 70px;
+        max-height: 140px;
+        margin-left: 0;
+        margin-bottom: 10px;
+        border-radius: 3px;
+        cursor: pointer;
+        overflow: hidden;
+
+        &:hover {
+            .cdx-partner-image__delete-img-btn {
+                display: block;
+            }
+        }
+    }
+
+    &__delete-img-btn {
+        width: 18px;
+        height: 18px;
+        top: 0;
+        right: 0;
+        position: absolute;
+        display: none;
+        background-color: #eff2f5;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+
+        &:before {
+            content: "\2715";
+            color: #707684;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        &:hover {
+            &:before {
+                color: #000;
+            }
+        }
+    }
+
+    &__line {
+         width: 230px;
+         height: 1px;
+         background: #000;
+     }
+}
+
+@media (min-width: 728px) {
+    .cdx-partner-image {
+        &__wrapper {
+            flex-direction: row;
+        }
+        &__card {
+            flex-direction: row-reverse;
+        }
+        &__image {
+            margin-bottom: 0;
+        }
+    }
+}
