@@ -239,7 +239,7 @@ export default class Partner {
    * @public
    */
   validate(savedData) {
-    return savedData.text.trim() !== '';
+    return savedData.image !== null;
   }
 
   /**
